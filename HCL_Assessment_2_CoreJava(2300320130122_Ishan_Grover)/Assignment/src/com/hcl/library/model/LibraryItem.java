@@ -1,5 +1,5 @@
-
 package com.hcl.library.model;
+import com.hcl.library.exception.ItemNotAvailableException;
 
 public abstract class LibraryItem
         implements Borrowable, Comparable<LibraryItem> {
@@ -54,7 +54,7 @@ public abstract class LibraryItem
     @Override
     public void borrow() {
         if (!available) {
-            throw new IllegalStateException(
+            throw new ItemNotAvailableException(
                     "Item is already issued.");
         }
 
