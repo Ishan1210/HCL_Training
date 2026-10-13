@@ -9,7 +9,7 @@ public class Throw {
     }
 
     public static void main(String[] args) {
-        int age = args.length > 0 ? Integer.parseInt(args[0]) : 16;
+        int age = 16;
 
         try {
             validateAge(age);
