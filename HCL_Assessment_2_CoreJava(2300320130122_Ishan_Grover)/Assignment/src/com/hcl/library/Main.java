@@ -1,5 +1,5 @@
 
-package com.hcl.library;
+package com.hcl.library.exception;
 
 import com.hcl.library.exception.BorrowLimitExceededException;
 import com.hcl.library.exception.ItemNotAvailableException;
