@@ -7,8 +7,8 @@ public class Salary {
 
     public Salary(long
                           basic, long
-            da, long
-            hra) {
+                          da, long
+                          hra) {
         this.basic = basic;
         this.da = da;
         this.hra = hra;
