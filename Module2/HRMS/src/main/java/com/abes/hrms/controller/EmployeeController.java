@@ -15,8 +15,10 @@ public class EmployeeController {
         return "<h2 style='color:red'>Welcome to HRMS App</h2>";
     }
     @GetMapping("/add")
-    public int sum(int a,int b){
+    public int sum(){
+        System.out.println("inside /add controller point");
         int result=demoemployee.add(20,50);
-        return 0;
+        System.out.println("result from model="+result);
+        return result;
     }
 }
