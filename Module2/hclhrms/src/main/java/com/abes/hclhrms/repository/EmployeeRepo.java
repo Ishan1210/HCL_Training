@@ -9,8 +9,12 @@ import java.util.List;
 public interface EmployeeRepo {
     String addemp(Employee emp);
     List<Employee> getEmp();
-    Employee getEmpById(long empid);
-    String deleteById(long empid);
-    String updateById(long empid,Employee updatedEmp);
+    Employee getEmpById(long emp_id);
+
+    String addEmpbulk();
+
+    String deleteById(long emp_id);
+    String updateById(long emp_id,Employee updatedEmp);
+
 
 }

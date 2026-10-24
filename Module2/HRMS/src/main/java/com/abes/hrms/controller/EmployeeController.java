@@ -10,6 +10,7 @@ public class EmployeeController {
     @Autowired
     private DemoEmployee demoemployee;
 
+
     @GetMapping("/")
     public String welcome(){
         return "<h2 style='color:red'>Welcome to HRMS App</h2>";
@@ -17,7 +18,19 @@ public class EmployeeController {
     @GetMapping("/add")
     public int sum(){
         System.out.println("inside /add controller point");
-        int result=demoemployee.add(20,50);
+        int result=demoemployee.add();
+        System.out.println("result from model="+result);
+        return result;
+    }
+    @GetMapping("/sqrt")
+    public double getSqrt(){
+        double result=demoemployee.squareRoot();
+        System.out.println("result from model="+result);
+        return result;
+    }
+    @GetMapping("/gtn")
+    public int gtn(){
+        int result=demoemployee.gtn();
         System.out.println("result from model="+result);
         return result;
     }
