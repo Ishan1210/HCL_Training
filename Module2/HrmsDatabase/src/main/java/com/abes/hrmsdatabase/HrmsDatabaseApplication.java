@@ -10,5 +10,4 @@ public class HrmsDatabaseApplication {
         SpringApplication.run(HrmsDatabaseApplication.class, args);
         System.out.println("Welcome to Springboot HRMS Database Application");
     }
-
 }
