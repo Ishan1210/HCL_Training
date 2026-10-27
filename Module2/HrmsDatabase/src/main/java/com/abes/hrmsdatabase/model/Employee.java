@@ -1,3 +1,4 @@
+
 package com.abes.hrmsdatabase.model;
 
 import jakarta.persistence.Entity;
@@ -5,21 +6,28 @@ import jakarta.persistence.Id;
 
 @Entity
 public class Employee {
+
     @Id
     private long emp_id;
-    private String emp_name;
-    private String stack;
-    private String designation;
 
-    public Employee(){
+    private String emp_name;
+    private String designation;
+    private String stack;
+    private String emp_email;
+    private String emp_password;
+
+    public Employee() {
 
     }
 
-    public Employee(long emp_id, String emp_name, String stack, String designation) {
+    public Employee(long emp_id, String emp_name, String designation,
+                    String stack, String emp_email, String emp_password) {
         this.emp_id = emp_id;
         this.emp_name = emp_name;
-        this.stack = stack;
         this.designation = designation;
+        this.stack = stack;
+        this.emp_email = emp_email;
+        this.emp_password = emp_password;
     }
 
     public long getEmp_id() {
@@ -38,6 +46,14 @@ public class Employee {
         this.emp_name = emp_name;
     }
 
+    public String getDesignation() {
+        return designation;
+    }
+
+    public void setDesignation(String designation) {
+        this.designation = designation;
+    }
+
     public String getStack() {
         return stack;
     }
@@ -46,11 +62,19 @@ public class Employee {
         this.stack = stack;
     }
 
-    public String getDesignation() {
-        return designation;
+    public String getEmp_email() {
+        return emp_email;
     }
 
-    public void setDesignation(String designation) {
-        this.designation = designation;
+    public void setEmp_email(String emp_email) {
+        this.emp_email = emp_email;
+    }
+
+    public String getEmp_password() {
+        return emp_password;
+    }
+
+    public void setEmp_password(String emp_password) {
+        this.emp_password = emp_password;
     }
 }
