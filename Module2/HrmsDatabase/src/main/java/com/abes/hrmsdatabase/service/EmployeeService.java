@@ -1,4 +1,3 @@
-
 package com.abes.hrmsdatabase.service;
 
 import com.abes.hrmsdatabase.model.Employee;
@@ -13,11 +12,6 @@ public class EmployeeService {
     private EmployeeRepository employeeRepository;
 
     public String createnewEmployee(Employee newEmp) {
-//        Employee emp1 = new Employee(
-//                200L, "Ram", "Developer",
-//                "Java FSD", "ram@gmail.com", "Ram@123"
-//        );
-
         employeeRepository.save(newEmp);
         return "Employee added successfully";
     }
@@ -25,6 +19,10 @@ public class EmployeeService {
     public String registerEmployee(Employee employee) {
         employeeRepository.save(employee);
         return "Employee registered successfully";
+    }
+
+    public Employee loginEmployee(String email, String password) {
+        return employeeRepository.findLoginEmployee(email, password);
     }
 
     public Employee getEmployeeById(long emp_id) {
@@ -36,22 +34,18 @@ public class EmployeeService {
             employeeRepository.deleteById(emp_id);
             return "Employee deleted successfully";
         }
-
         return "Employee not found";
     }
 
     public String updateEmployeeById(long emp_id) {
         Employee emp = employeeRepository.findById(emp_id).orElse(null);
-
         if (emp != null) {
             emp.setEmp_name("Ishan");
             emp.setDesignation("Developer");
             emp.setStack("Java FSD");
-
             employeeRepository.save(emp);
             return "Employee updated successfully";
         }
-
         return "Employee not found";
     }
 }

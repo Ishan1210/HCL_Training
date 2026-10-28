@@ -3,6 +3,7 @@ package com.abes.hrmsdatabase.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Entity
 public class Employee {
@@ -14,6 +15,7 @@ public class Employee {
     private String designation;
     private String stack;
     private String emp_email;
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String emp_password;
 
     public Employee() {
