@@ -1,4 +1,4 @@
-package com.jwtd2.jwtdemo.security;
+package com.jwtd2.jwtdemo.service;
 
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
@@ -19,12 +19,24 @@ public class Jwtservice {
         this.verifier = JWT.require(algorithm).build();
         this.expireMs = expireMs;
     }
-    public String generateToken(String username, String password){
+    public String generateToken(String username){
         Date now = new Date();
         return JWT.create()
                 .withSubject(username)
                 .withIssuedAt(now)
                 .withExpiresAt(new Date(now.getTime() + expireMs))
                 .sign(algorithm);
+    }
+
+    public String verifyAndGetUsername(String substring) {
+        return validateTokenAndRetrieveSubject(substring);
+    }
+
+    public String validateTokenAndRetrieveSubject(String token) {
+        try {
+            return verifier.verify(token).getSubject();
+        } catch (Exception e){
+            return null;
+        }
     }
 }

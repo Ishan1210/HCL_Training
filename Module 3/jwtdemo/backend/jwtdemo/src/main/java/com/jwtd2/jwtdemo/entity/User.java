@@ -2,10 +2,12 @@ package com.jwtd2.jwtdemo.entity;
 
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.jspecify.annotations.Nullable;
 
 @Entity
 @Table(name ="users")
@@ -21,4 +23,9 @@ public class User {
     private String username;
     @Column(unique = true,nullable = false)
     private String password;
+
+    public User(@NotBlank String username, @Nullable String encode) {
+        this.username = username;
+        this.password = password;
+    }
 }
