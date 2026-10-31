@@ -1,5 +1,4 @@
-package com.jwtd2.jwtdemo.entity;
-
+package com.hcld2.jwtdemo.entity;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
@@ -10,21 +9,21 @@ import lombok.NoArgsConstructor;
 import org.jspecify.annotations.Nullable;
 
 @Entity
-@Table(name ="users")
+@Table(name = "users")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
-@Data
+
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(unique = true,nullable = false)
+    @Column(unique = true, nullable = false)
     private String username;
-    @Column(unique = true,nullable = false)
+    @Column(nullable = false)
     private String password;
 
-    public User(@NotBlank String username, @Nullable String encode) {
+    public User(@NotBlank String username, @Nullable String password) {
         this.username = username;
         this.password = password;
     }

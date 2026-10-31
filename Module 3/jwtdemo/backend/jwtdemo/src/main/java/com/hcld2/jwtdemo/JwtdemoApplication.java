@@ -1,4 +1,4 @@
-package com.jwtd2.jwtdemo;
+package com.hcld2.jwtdemo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

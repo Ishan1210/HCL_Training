@@ -1,4 +1,4 @@
-package com.jwtd2.jwtdemo.dto;
+package com.hcld2.jwtdemo.dto;
 
 public record AuthResponse(String token, String username) {
 
